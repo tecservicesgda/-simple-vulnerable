@@ -12,11 +12,11 @@ public class DeserializationServlet extends HttpServlet {
             byte[] serializedData = request.getInputStream().readAllBytes();  // User-provided input
 
             // Vulnerability: Deserialization of untrusted data
-            ObjectInputStream ois = new ObjectInputStream(new ByteArrayInputStream(serializedData));
-            Object obj = ois.readObject();
-            ois.close();
+            // ObjectInputStream ois = new ObjectInputStream(new ByteArrayInputStream(serializedData));
+            // Object obj = ois.readObject();
+            // ois.close();
 
-            response.getWriter().println("Deserialized object: " + obj.toString());
+            // response.getWriter().println("Deserialized object: " + obj.toString());
         } catch (Exception e) {
             e.printStackTrace();
             response.getWriter().println("Error: " + e.getMessage());
