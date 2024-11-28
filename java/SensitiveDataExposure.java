@@ -9,7 +9,7 @@ public class SensitiveDataExposure {
             Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/mydatabase", username, password);
         } catch (SQLException e) {
             // Vulnerability: Exposing sensitive data in error message
-            System.err.println("Failed to connect to database with user: " + username + " and password: " + password);
+            System.err.println("Failed to connect to database. Please check your credentials.");
         }
     }
 }
